@@ -23,17 +23,21 @@ function birthday() {
     }
     
 }
-console.log(birthday())
+// console.log(birthday())
 
 //3) Створити функцію яка з массиву вибирає всі булеві значення
 const sort = [true, 'false', 111, -0, 'true', false, {a:false}, [true, 'false']];
 function bool(arr) {
     let res = []
     for (let i = 0; i<arr.length;i++) {
-        if(arr[i] == "false"? false : !!arr[i] && arr[i].a == false ? false : !!arr[i] && arr[i] == "false"? false : !!arr[i] && Boolean(arr[i])) {
+        if(typeof arr[i] === 'boolean' || typeof arr[i].a === 'boolean') {
             res.push(arr[i]);
         }
+        else if (typeof arr[i][0] === 'boolean') {
+            res.push(arr[i][0])
+        }
     }
+    console.log(typeof arr[arr.length - 1][0])
     return res
 }
 console.log(bool(sort))
