@@ -37,7 +37,6 @@ function bool(arr) {
             res.push(arr[i][0])
         }
     }
-    console.log(typeof arr[arr.length - 1][0])
     return res
 }
 console.log(bool(sort))
